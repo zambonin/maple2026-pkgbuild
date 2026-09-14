@@ -2,7 +2,7 @@
 
 pkgname=maple2026
 pkgver=2026.1
-pkgrel=2
+pkgrel=3
 pkgdesc='A commercial computer algebra system developed by Maplesoft'
 arch=('x86_64')
 url='https://www.maplesoft.com/products/maple/'
@@ -32,10 +32,12 @@ install='maple2026.install'
 source=('maple2026.desktop'
         'Maplesoft-x-maple-worksheet.xml'
         'activation-headless.patch'
+        'xmaple'
         'local://Maple2026.1LinuxX64Installer.run')
-sha256sums=('e01095dd24dfa692a8ccd7695175ba5f382854cbc3b81defec5f653ed118f0c3'
+sha256sums=('faf9d01b753105071caf202b0305a564c6989e7e82a35fd377516d7df68a1e3d'
             '8478a719fd3e393b5bc1a2a92431701a00a15174c1fac5f1798bf36af216f028'
             '708507e80b9ea23a6e88ee719d49250ee2c2ca61d90a5c656499354fbae00175'
+            'fa54aa594603fd360352f8605920e057bc1f10709d49aaeb433e77f918d590d5'
             '4d52414cfc43ca7ef83ef08a84a6c05f09529b1d6049f172d02d0770c2ac8262')
 
 prepare() {
@@ -84,10 +86,11 @@ package() {
 
   install -d "${pkgdir}/usr/bin"
   local _command
-  for _command in maple xmaple mint mhelp maple.system.type; do
+  for _command in maple mint mhelp maple.system.type; do
     ln -s "/usr/share/maple2026/bin/${_command}" \
       "${pkgdir}/usr/bin/${_command}"
   done
+  install -Dm755 "${srcdir}/xmaple" "${pkgdir}/usr/bin/xmaple"
 
   while IFS= read -r _file; do
     sed -i "s|${srcdir}|/usr/share|g" "${_file}"

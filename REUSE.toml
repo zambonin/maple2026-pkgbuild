@@ -13,6 +13,7 @@ path = [
   "activation-headless.patch",
   "maple2026.desktop",
   "maple2026.install",
+  "xmaple",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Gustavo Zambonin <gzmbnn@gmail.com>"

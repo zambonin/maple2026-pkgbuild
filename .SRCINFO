@@ -1,7 +1,7 @@
 pkgbase = maple2026
 	pkgdesc = A commercial computer algebra system developed by Maplesoft
 	pkgver = 2026.1
-	pkgrel = 2
+	pkgrel = 3
 	url = https://www.maplesoft.com/products/maple/
 	install = maple2026.install
 	arch = x86_64
@@ -35,10 +35,12 @@ pkgbase = maple2026
 	source = maple2026.desktop
 	source = Maplesoft-x-maple-worksheet.xml
 	source = activation-headless.patch
+	source = xmaple
 	source = local://Maple2026.1LinuxX64Installer.run
-	sha256sums = e01095dd24dfa692a8ccd7695175ba5f382854cbc3b81defec5f653ed118f0c3
+	sha256sums = faf9d01b753105071caf202b0305a564c6989e7e82a35fd377516d7df68a1e3d
 	sha256sums = 8478a719fd3e393b5bc1a2a92431701a00a15174c1fac5f1798bf36af216f028
 	sha256sums = 708507e80b9ea23a6e88ee719d49250ee2c2ca61d90a5c656499354fbae00175
+	sha256sums = fa54aa594603fd360352f8605920e057bc1f10709d49aaeb433e77f918d590d5
 	sha256sums = 4d52414cfc43ca7ef83ef08a84a6c05f09529b1d6049f172d02d0770c2ac8262
 
 pkgname = maple2026
