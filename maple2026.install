@@ -1,0 +1,9 @@
+post_install() {
+  printf '%s\n' 'Activate Maple system-wide by running as root:' \
+    '  /usr/share/maple2026/bin/activation -console'
+}
+
+post_upgrade() {
+  printf '%s\n' 'If Maple requires reactivation, run as root:' \
+    '  /usr/share/maple2026/bin/activation -console'
+}

@@ -1,0 +1,18 @@
+version = 1
+SPDX-PackageName = "maple2026"
+SPDX-PackageSupplier = "Gustavo Zambonin <gzmbnn@gmail.com>"
+SPDX-PackageDownloadLocation = "https://aur.archlinux.org/packages/maple2026"
+
+[[annotations]]
+path = [
+  ".SRCINFO",
+  ".gitignore",
+  "Maplesoft-x-maple-worksheet.xml",
+  "PKGBUILD",
+  "README.txt",
+  "maple2026.desktop",
+  "maple2026.install",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Gustavo Zambonin <gzmbnn@gmail.com>"
+SPDX-License-Identifier = "0BSD"

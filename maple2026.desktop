@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Maple 2026
+Type=Application
+Comment=Computer algebra system
+Exec=/usr/share/maple2026/bin/xmaple %f
+Icon=maple2026
+GenericName=Maple
+Categories=Education;Science;Math;
+MimeType=application/x-maple-worksheet;

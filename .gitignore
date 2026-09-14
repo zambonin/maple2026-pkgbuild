@@ -1,0 +1,5 @@
+Maple2026.1LinuxX64Installer.run
+pkg/
+src/
+*.pkg.tar*
+*.src.tar*
