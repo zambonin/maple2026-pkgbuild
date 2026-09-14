@@ -10,6 +10,7 @@ path = [
   "Maplesoft-x-maple-worksheet.xml",
   "PKGBUILD",
   "README.txt",
+  "activation-headless.patch",
   "maple2026.desktop",
   "maple2026.install",
 ]

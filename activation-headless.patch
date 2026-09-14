@@ -1,0 +1,11 @@
+--- a/bin/activation
++++ b/bin/activation
+@@ -178,7 +178,7 @@
+ 
+ 
+ if [ "$CONSOLE_ACTIVATION" = "1" ]; then
+-    eval "'${MAPLE_JRE_BIN}${JAVA_EXEC}'" -Xmx${JAVAHEAP}m "$LANGUAGE_OPT" -cp "'$ACTVCLASSPATH'" "$ACTVAPP" "${ACTIVATE_TYPE}" "${ACTIVATE_TYPE_OPT}" "${P_OPT}" "${MAPLE_OPT}"
++    eval "'${MAPLE_JRE_BIN}${JAVA_EXEC}'" -Djava.awt.headless=true -Xmx${JAVAHEAP}m "$LANGUAGE_OPT" -cp "'$ACTVCLASSPATH'" "$ACTVAPP" "${ACTIVATE_TYPE}" "${ACTIVATE_TYPE_OPT}" "${P_OPT}" "${MAPLE_OPT}"
+ else
+     eval "'${MAPLE_JRE_BIN}${JAVA_EXEC}'" -Xmx${JAVAHEAP}m "$LANGUAGE_OPT" -cp "'$ACTVCLASSPATH'" "$ACTVAPP" "${ACTIVATE_TYPE}" "${ACTIVATE_TYPE_OPT}" "${P_OPT}" "${MAPLE_OPT}"  1>/dev/null 2>&1
+ fi

@@ -2,7 +2,7 @@
 
 pkgname=maple2026
 pkgver=2026.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A commercial computer algebra system developed by Maplesoft'
 arch=('x86_64')
 url='https://www.maplesoft.com/products/maple/'
@@ -31,9 +31,11 @@ options=('!strip')
 install='maple2026.install'
 source=('maple2026.desktop'
         'Maplesoft-x-maple-worksheet.xml'
+        'activation-headless.patch'
         'local://Maple2026.1LinuxX64Installer.run')
 sha256sums=('e01095dd24dfa692a8ccd7695175ba5f382854cbc3b81defec5f653ed118f0c3'
             '8478a719fd3e393b5bc1a2a92431701a00a15174c1fac5f1798bf36af216f028'
+            '708507e80b9ea23a6e88ee719d49250ee2c2ca61d90a5c656499354fbae00175'
             '4d52414cfc43ca7ef83ef08a84a6c05f09529b1d6049f172d02d0770c2ac8262')
 
 prepare() {
@@ -54,6 +56,9 @@ build() {
 package() {
   install -d "${pkgdir}/usr/share/maple2026"
   cp -a "${srcdir}/maple2026/." "${pkgdir}/usr/share/maple2026/"
+
+  patch -d "${pkgdir}/usr/share/maple2026" -Np1 \
+    < "${srcdir}/activation-headless.patch"
 
   rm -rf "${pkgdir}/usr/share/maple2026/uninstall" \
     "${pkgdir}/usr/share/maple2026/update"
